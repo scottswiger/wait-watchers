@@ -8,10 +8,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/weight/:num', async (req, res) => {
-    // This method renders the 'blog' template, and uses params to select the correct blog to render in the template, based on the id of the blog.
+    // This method renders the 'weight' template, and uses params to select the correct weight to render in the template, based on the id of the weight.
     return res.render('weight', weight[req.params.num - 1]);
   });
 
 module.exports = router;
 
-// check on instuctional 15 for more on sessions
