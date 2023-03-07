@@ -9,9 +9,13 @@ const session = require('express-session');
 // Set up sessions for log-ins
 const sess = {
     secret: 'Super secret secret',
+    cookie: {},
     resave: false,
-    saveUninitialized: false,
-};
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
 
 app.use(session(sess));
 
