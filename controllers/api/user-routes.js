@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const User = require('../../models/User');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -10,10 +10,8 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
 
-    // TODO: Set up sessions with the 'loggedIn' variable
     req.session.save(() => {
       req.session.loggedIn =true;
-      // TODO: Set the 'loggedIn' session variable to 'true'
 
       res.status(200).json(dbUserData);
     });
@@ -49,7 +47,6 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      // TODO: Once the user successfully logs in, set up sessions with the 'loggedIn' variable
       req.session.loggedIn =true;
 
       res
@@ -64,7 +61,6 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
-  // When the user logs out, the session is destroyed
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

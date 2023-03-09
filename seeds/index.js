@@ -1,16 +1,15 @@
+const seedWellness = require('./wellnessSeeds');
+const seedUsers = require('./userSeeds')
 const sequelize = require('../config/connection');
-const weight = require('../models/weight');
-const weightData = require('./weight-seeds.json');
 
-const seedDatabase = async () => {
+const seedAll = async () => {
   await sequelize.sync({ force: true });
-
-  await weight.bulkCreate(blogData, {
-    individualHooks: true,
-    returning: true,
-  });
-
+  console.log('\n----- DATABASE SYNCED -----\n');
+  await seedWellness();
+  console.log('\n----- STATS SEEDED -----\n');
+  await seedUsers();
+  console.log('\n----- USERS SEEDED -----\n')
   process.exit(0);
 };
 
-seedDatabase();
+seedAll();
