@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --LavenderPink: #F5B0CB;
     --nonphotoblue: #92D5E6;
@@ -94,4 +98,22 @@ body {
 
 .meal-header {
     text-align: center;
+}
+
+#tracker-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.water-div-container {
+    background-color: var(--gamboge);
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px 2px black;
+
 }
