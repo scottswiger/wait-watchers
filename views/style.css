@@ -10,6 +10,10 @@
 
 }
 
+body {
+    background-color: var(--eminence);
+}
+
 #top-header {
     display: flex;
     flex-wrap: wrap;
@@ -36,6 +40,8 @@
 #calorie-tracker-div {
     margin: 20px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
 }
@@ -58,4 +64,34 @@
 #tracker-label {
     padding: 10px;
     margin: 10px;
+}
+
+.meal-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-div-container {
+    background-color: var(--gamboge);
+    width: 60%;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px 2px black;
+
+}
+
+.add-food-button {
+    padding: 10px;
+    margin: 10px;
+}
+
+.meal-header {
+    text-align: center;
 }
