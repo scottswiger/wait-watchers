@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --LavenderPink: #F5B0CB;
     --nonphotoblue: #92D5E6;
@@ -71,11 +75,13 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 30%;
 }
 
 .meal-div-container {
     background-color: var(--gamboge);
-    width: 60%;
+    width: 100%;
     border: 3px solid black;
     border-radius: 20px;
     display: flex;
@@ -94,4 +100,44 @@ body {
 
 .meal-header {
     text-align: center;
+}
+
+#tracking-area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+/* .water-div-container {
+    background-color: var(--gamboge);
+    width: 30%;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px 2px black;
+
+} */
+
+.outer-columns{
+    margin-left: 10px;
+    margin-right: 10px;
+    width:30%;
+    background-color: var(--gamboge);
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+#exercise-div {
+    margin-right: 0%;
 }
