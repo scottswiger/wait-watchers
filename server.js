@@ -5,7 +5,8 @@ const routes = require('./controllers/index');
 const sequelize = require('./config/connection');
 const session = require('express-session');
 const hbs = exphbs.create({});
-
+const Handlebars = require("handlebars");
+ 
 // Set up sessions for log-ins
 // const sess = {
 //     secret: 'Super secret secret',
