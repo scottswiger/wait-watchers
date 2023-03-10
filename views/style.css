@@ -3,31 +3,29 @@
 }
 
 :root {
-    --LavenderPink: #F5B0CB;
+    --sapphire: #4059AD;
+    --khaki: #B2AA8E;
+    --mindaro: #DBFE87;
     --nonphotoblue: #92D5E6;
-    --eminence: #772D8B;
-    --gamboge: #F1A208;
-    --lightgreen: #A1EF8B;
+    --lightseagreen: #03B5AA;
     --offwhite: whitesmoke;
-    --black: #0A0908;
+    --oxfordblue: #0C1B33;
+    --onyx: #2E3532;
+    --azure: #EBFFFD;
 
 
 }
 
 body {
-    background-color: var(--eminence);
+    background-color: var(--azure);
 }
 
 #top-header {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
-    background-color: var(--LavenderPink);
-    /* position: fixed;
-    width: 100%;
-    top: 0; */
-
+    background-color: var(--nonphotoblue);
 }
 
 #profileIcon {
@@ -51,7 +49,7 @@ body {
 }
 
 #calorie-tracker-bar{
-    background-color: var(--nonphotoblue);
+    background-color: var(--mindaro);
     width: 80%;
     height: 100px;
     /* margin-top: 200px; */
@@ -80,7 +78,7 @@ body {
 }
 
 .meal-div-container {
-    background-color: var(--gamboge);
+    background-color: var(--sapphire);
     width: 100%;
     border: 3px solid black;
     border-radius: 20px;
@@ -127,7 +125,7 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     width:30%;
-    background-color: var(--gamboge);
+    background-color: var(--lightseagreen);
     border: 3px solid black;
     border-radius: 20px;
     display: flex;
