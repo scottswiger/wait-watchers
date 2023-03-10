@@ -76,7 +76,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
 }
 
 .meal-div-container {
@@ -105,9 +105,11 @@ body {
 #tracking-area {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
 }
 
-.water-div-container {
+/* .water-div-container {
     background-color: var(--gamboge);
     width: 30%;
     border: 3px solid black;
@@ -119,4 +121,23 @@ body {
     margin-top: 20px;
     box-shadow: 2px 2px 2px 2px black;
 
+} */
+
+.outer-columns{
+    margin-left: 10px;
+    margin-right: 10px;
+    width:30%;
+    background-color: var(--gamboge);
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+#exercise-div {
+    margin-right: 0%;
 }
