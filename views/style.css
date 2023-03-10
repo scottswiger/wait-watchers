@@ -3,31 +3,32 @@
 }
 
 :root {
-    --LavenderPink: #F5B0CB;
+    --sapphire: #4059AD;
+    --khaki: #B2AA8E;
+    --mindaro: #DBFE87;
     --nonphotoblue: #92D5E6;
-    --eminence: #772D8B;
-    --gamboge: #F1A208;
-    --lightgreen: #A1EF8B;
+    --lightseagreen: #03B5AA;
     --offwhite: whitesmoke;
-    --black: #0A0908;
+    --oxfordblue: #0C1B33;
+    --onyx: #2E3532;
+    --azure: #EBFFFD;
 
 
 }
 
 body {
-    background-color: var(--eminence);
+    background-color: var(--azure);
+    font-family: 'Roboto Mono', monospace, sans-serif;
 }
 
 #top-header {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
-    background-color: var(--LavenderPink);
-    /* position: fixed;
-    width: 100%;
-    top: 0; */
-
+    background-color: var(--nonphotoblue);
+    box-shadow: 0px 3px 8px var(--onyx);
+    border: 1px solid var(--offwhite);
 }
 
 #profileIcon {
@@ -51,13 +52,14 @@ body {
 }
 
 #calorie-tracker-bar{
-    background-color: var(--nonphotoblue);
+    background-color: var(--mindaro);
     width: 80%;
     height: 100px;
     /* margin-top: 200px; */
     text-align: center;
     border-radius: 30px;
     border: 2px solid black;
+    box-shadow: 2px 2px 10px 4px var(--onyx);
 }
 
 .section-label {
@@ -80,7 +82,7 @@ body {
 }
 
 .meal-div-container {
-    background-color: var(--gamboge);
+    background-color: var(--sapphire);
     width: 100%;
     border: 3px solid black;
     border-radius: 20px;
@@ -89,7 +91,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 1px 5px 4px 1px var(--onyx);
 
 }
 
@@ -109,35 +111,62 @@ body {
     justify-content: space-around;
 }
 
-/* .water-div-container {
-    background-color: var(--gamboge);
-    width: 30%;
-    border: 3px solid black;
-    border-radius: 20px;
+.water-div-container {
+    height: 100%;
+    /* background-color: antiquewhite; */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
-
-} */
+    flex-direction: column-reverse;
+}
 
 .outer-columns{
     margin-left: 10px;
     margin-right: 10px;
     width:30%;
-    background-color: var(--gamboge);
+    background-color: var(--lightseagreen);
     border: 3px solid black;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: flex-end; */
     align-items: center;
     margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: -5px 5px 7px 1px var(--onyx);
 }
 
 #exercise-div {
     margin-right: 0%;
+    box-shadow: 5px 5px 7px 1px var(--onyx);
+}
+
+.button-container { 
+    /* border: 1px solid black; */
+
+}
+
+.meal-header{
+    /* border: 1px solid black; */
+}
+
+.add-food-container {
+   /* border: 1px solid black; */
+   justify-content: flex-end;
+}
+
+button {
+    border-radius: 25px;
+    border: 2px solid var(--offwhite);
+    background-color: transparent;
+    color: var(--offwhite);
+    box-shadow: 1px 1px 5px var(--onyx);
+}
+
+button:hover {
+    background-color: var(--offwhite);
+    color: var(--oxfordblue);
+    border: 2px solid var(--onyx);
+    padding: 15px;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    text-shadow: 1px 1px 1px var(--onyx);
 }
