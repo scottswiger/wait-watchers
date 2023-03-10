@@ -15,6 +15,6 @@ const data = [
     },
 ];
 
-const seedWellness = () => User.bulkCreate(data);
+const seedUsers = async () => await User.bulkCreate(data);
 
-module.exports = seedWellness;
+module.exports = seedUsers;
