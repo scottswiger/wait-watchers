@@ -75,11 +75,13 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 40%;
 }
 
 .meal-div-container {
     background-color: var(--gamboge);
-    width: 60%;
+    width: 100%;
     border: 3px solid black;
     border-radius: 20px;
     display: flex;
@@ -100,13 +102,14 @@ body {
     text-align: center;
 }
 
-#tracker-area {
+#tracking-area {
     display: flex;
     flex-wrap: wrap;
 }
 
 .water-div-container {
     background-color: var(--gamboge);
+    width: 30%;
     border: 3px solid black;
     border-radius: 20px;
     display: flex;
