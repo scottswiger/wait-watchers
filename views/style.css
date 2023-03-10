@@ -18,6 +18,7 @@
 
 body {
     background-color: var(--azure);
+    font-family: 'Roboto Mono', monospace, sans-serif;
 }
 
 #top-header {
@@ -26,6 +27,8 @@ body {
     padding: 10px;
     justify-content: center;
     background-color: var(--nonphotoblue);
+    box-shadow: 0px 3px 8px var(--onyx);
+    border: 1px solid var(--offwhite);
 }
 
 #profileIcon {
@@ -56,6 +59,7 @@ body {
     text-align: center;
     border-radius: 30px;
     border: 2px solid black;
+    box-shadow: 2px 2px 10px 4px var(--onyx);
 }
 
 .section-label {
@@ -87,7 +91,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: 1px 5px 4px 1px var(--onyx);
 
 }
 
@@ -107,19 +111,12 @@ body {
     justify-content: space-around;
 }
 
-/* .water-div-container {
-    background-color: var(--gamboge);
-    width: 30%;
-    border: 3px solid black;
-    border-radius: 20px;
+.water-div-container {
+    height: 100%;
+    /* background-color: antiquewhite; */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
-
-} */
+    flex-direction: column-reverse;
+}
 
 .outer-columns{
     margin-left: 10px;
@@ -130,12 +127,46 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: flex-end; */
     align-items: center;
     margin-top: 20px;
-    box-shadow: 2px 2px 2px 2px black;
+    box-shadow: -5px 5px 7px 1px var(--onyx);
 }
 
 #exercise-div {
     margin-right: 0%;
+    box-shadow: 5px 5px 7px 1px var(--onyx);
+}
+
+.button-container { 
+    /* border: 1px solid black; */
+
+}
+
+.meal-header{
+    /* border: 1px solid black; */
+}
+
+.add-food-container {
+   /* border: 1px solid black; */
+   justify-content: flex-end;
+}
+
+button {
+    border-radius: 25px;
+    border: 2px solid var(--offwhite);
+    background-color: transparent;
+    color: var(--offwhite);
+    box-shadow: 1px 1px 5px var(--onyx);
+}
+
+button:hover {
+    background-color: var(--offwhite);
+    color: var(--oxfordblue);
+    border: 2px solid var(--onyx);
+    padding: 15px;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+    text-shadow: 1px 1px 1px var(--onyx);
 }
