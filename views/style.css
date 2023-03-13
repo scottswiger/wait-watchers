@@ -31,15 +31,28 @@ body {
     border: 1px solid var(--offwhite);
 }
 
-#profileIcon {
+/* #profileIcon {
     padding: 20px;
     margin-right: 30px;
-}
+} */
 
 #title-date {
     margin: auto;
     text-align: center;
 
+}
+
+#navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+}
+
+#navbar-list > li {
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 #calorie-tracker-div {
