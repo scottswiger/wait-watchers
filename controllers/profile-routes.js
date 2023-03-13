@@ -8,6 +8,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const data = await Wellness.findAll();
+    // const data = await Wellness.findAll({where: {user_id: req.session.user_id}});
     if (!data) {
       res.status(404).json({ message: "No data found" });
       return;
@@ -15,14 +16,24 @@ router.get('/', async (req, res) => {
 
     const stats = data.map(wellness => wellness.get({ plain: true }));
 
-    res.render('profile')
+    res.render('profile', {stats})
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login')
+  } catch (err) {
+    res.status(500).json(err);
+  
+  }
+})
+
+
 // View another user's profile
-router.get('/:id', async (req, res) => {
+router.get('/profile/:id', async (req, res) => {
     try {
       const data = await Wellness.findByPk(req.params.id);
       if (!data) {

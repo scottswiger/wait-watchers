@@ -1,2 +1,8 @@
-{{!-- This is what you will see upon login  --}}
-<h1>nope.</h1>
+<div>
+    {{#each stats as | stat | }}
+    <p>Calories Per Day: {{stat.caloriesPerDay}}</p>
+    <p>Active Time: {{stat.minutesExercised}}</p>
+    <p>Glasses of Water: {{stat.ouncesOfWater}}</p>
+    {{/each}}
+</div>
+    
