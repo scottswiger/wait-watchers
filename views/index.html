@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>Nutrition Tracker</title>
   </head>
   <body>
@@ -12,8 +15,6 @@
       <div id="title-date">
         <h1>Nutrition Tracker</h1>
         <h4>Date</h4>
-      </div>
-      <div id="profileIcon">
         <img src="../assets/PXL_20230309_001159058.MP.jpg" alt="joshFace" height="100px"/>
       </div>
     </header>
@@ -27,6 +28,18 @@
         </div>
           <h4>Calories Consumed</h4>
       </div>
+      <section id="tracking-area">
+        <div class="outer-columns">
+          <header class="meal-header">
+              <h3>Water</h3>
+          </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+              <button class="add-food-button">Add Water</button>
+          </div>
+        </div>
+        </div>
+      
       <section class="row" id="searchBar">
         <!-- will use the API/s within the search bar to display results -->
       </section>
@@ -73,6 +86,20 @@
           <button class="add-food-button">Add Food</button>
         </div>
       </div>
+      </section>
+      <div class="outer-columns" id="exercise-div">
+        <header class="meal-header">
+              <h3>Exercise</h3>
+        </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+            
+            <div class = "button-container">
+            <button class="add-food-button">Add Exercise</button>
+            </div>
+          </div>
+        </div>
+        </div>
       </section>
     </main>
   </body>

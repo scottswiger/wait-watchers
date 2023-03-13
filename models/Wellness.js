@@ -26,7 +26,7 @@ Wellness.init(
         user_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'User',
+              model: 'user',
               key: 'id',
             },
           },
@@ -36,8 +36,9 @@ Wellness.init(
             timestamps: false,
             freezeTableName: true,
             underscored: true,
-            modelName: "card",
+            modelName: "wellness",
     }  
 );
+// got mysql fixed by changing this modelname above to wellness
 
 module.exports = Wellness;
