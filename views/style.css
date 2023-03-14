@@ -24,11 +24,10 @@ body {
 #top-header {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
     justify-content: center;
     background-color: var(--nonphotoblue);
     box-shadow: 0px 3px 8px var(--onyx);
-    border: 1px solid var(--offwhite);
+    width: 100%;
 }
 
 /* #profileIcon {
@@ -39,20 +38,33 @@ body {
 #title-date {
     margin: auto;
     text-align: center;
+    width: 100%;
 
 }
 
-#navbar-list {
-    list-style-type: none;
-    margin: 0;
+#navbar {
+    /* list-style-type: none;
+     margin: 0;
     padding: 0;
-    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    justify-content: space-around; */
+    width: 100%;
 }
 
-#navbar-list > li {
-    display: inline;
-    padding-right: 10px;
-    padding-left: 10px;
+#navbar a{
+   float: left;
+   padding: 12px;
+   color: var(--azure);
+   text-decoration: none;
+   text-align: center;
+   width: 33.33%;
+   border: 1px solid black;
+   background-color: var(--khaki);
+}
+
+#navbar a:hover {
+    background-color: var(--oxfordblue);
 }
 
 #calorie-tracker-div {
