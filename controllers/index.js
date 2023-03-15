@@ -7,7 +7,7 @@ router.use('/', profileRoutes);
 
 // Homepage route
 router.use((req, res) => {
-    res.render('layouts/main');
+    res.render('homePage');
   });
 
 module.exports = router;
