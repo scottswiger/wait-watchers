@@ -13,6 +13,7 @@ const data = [
         minutesExercised: 30,
         ouncesOfWater: 64,
     },
+   
 ];
 
 const seedWellness = () => Wellness.bulkCreate(data);
