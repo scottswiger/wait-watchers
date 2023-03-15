@@ -1,14 +1,13 @@
-import { Chart } from 'chart.js'
+// const { Chart } = require("chart.js")
 
-const ctx = document.getElementById('myChart');
-                  
+const ctx = document.getElementById('myChart');         
 new Chart(ctx, {
   type: 'doughnut',
   data: {
     labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     datasets: [{
       label: 'Macro Breakdown',
-      data: [4, 11, 3, 5, 2, 6, 5],
+      data: [2, 5, 8, 5, 7, 11, 3],
       borderWidth: 1
     }]
   },
