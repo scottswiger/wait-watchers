@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "chart.js": "^4.2.1",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -19,7 +18,6 @@
   "description": "Calorie and exercise tracking app",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scottswiger/wait-watchers.git"
