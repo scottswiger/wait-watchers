@@ -34,4 +34,4 @@ sequelize.sync({force : false}).then(() => {
         console.log('Server listening on: http://localhost:' + PORT);
 });
 
-}).catch(err => console.log(error));
+}).catch(err => console.log(err));
