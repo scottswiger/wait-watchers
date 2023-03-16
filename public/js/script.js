@@ -15,6 +15,7 @@ const calPerc = document.getElementById('cal-percentage');
 const root = document.querySelector(':root');
 
 
+
 //date shit
 let day = todayDate.getDate();
 let month = todayDate.getMonth() + 1;
@@ -40,7 +41,7 @@ budget.innerHTML = calorieBudget;
 let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
 remainder.innerHTML = CalorieRemainingBudget;
 
-let caloriePercentage = (Number(tcc)/Number(calorieBudget)) *100;
+let caloriePercentage = (Number(tcc)/Number(CalorieRemainingBudget)) *100;
 console.log(caloriePercentage);
 let roundedCalPercentage = caloriePercentage.toFixed();
 calPerc.innerHTML = roundedCalPercentage;
