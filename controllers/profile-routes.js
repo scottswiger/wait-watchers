@@ -46,20 +46,20 @@ router.get('/login', async (req, res) => {
 })
 
 
-// View another user's profile
-router.get('/profile/:id', async (req, res) => {
-    try {
-      const data = await Wellness.findByPk(req.params.id);
-      if (!data) {
-        res.status(404).json({ message: 'User not found' });
-        return;
-      }
-      const stats = data.get({ plain: true });
-      res.render('profile', stats);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+// View another user's profile -- Not functional atm
+// router.get('/profile/:id', async (req, res) => {
+//     try {
+//       const data = await Wellness.findByPk(req.params.id);
+//       if (!data) {
+//         res.status(404).json({ message: 'User not found' });
+//         return;
+//       }
+//       const stats = data.get({ plain: true });
+//       res.render('profile', stats);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
 module.exports = router;
 

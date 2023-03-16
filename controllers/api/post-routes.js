@@ -29,15 +29,12 @@ router.post('/', withAuth, async (req, res) => {
 //     }
 //   });
 
-  router.delete('/:id', withAuth, async (req, res) => {
+  router.delete('/:id', async (req, res) => {
     try {
-      const deleteSubmission= Wellness.destroy({
-        where: {
-          id: req.params.id,
-        }
+      const deleteSubmission= User.destroy({ where: { id: req.params.id }
       });
 
-      if (!deleteSubmission) {
+      if (deleteSubmission) {
         res.status(200).end();
       } else {
         res.status(404).end();
