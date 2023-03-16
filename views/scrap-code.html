@@ -27,32 +27,32 @@
         <h2 class="section-label" >Tracker Bar</h2>
       </header>
       <div id="calorie-tracker-div">
-          <div>
-            <p id="calorie-display"></p>
+          <h4>Calories Remaining: <span id="cal-remain"></span></h4>
+          <div id="tracker-bar-wrap">
+            <div id="calorie-tracker-bar"></div>
           </div>
-          <div>
-            <h2>Total Water</h2>
-            <p><span id="total-water"></span> Ounces of Water!!</p>
-          </div>
-          <div>
-            <h2>Total Exercise</h2>
-            <p><span id="total-exercise"></span> Calories Burned</p>
-          </div>
-          <h4>Calorie Budget</h4>
-        <div id="calorie-tracker-bar">
-        </div>
-          <h4>Calories Consumed:<span id="calories-consumed"></span></h4>
+          <h4>Calories Consumed: <span id="calorie-display"></span> calories</h4>
+          <p id="cal-percentage"></p>
       </div>
       <section id="tracking-area">
         <div class="outer-columns">
           <header class="meal-header">
-              <h3>Water</h3>
+            <h3>Water</h3>
+            <h4>Ounces Consumed: <span id="total-water"></span> ounces</h4>
           </header>
-        <div class="water-div-container">
-          <div class="add-food-container">
+          <div class="water-div-container">
+            <div class="add-food-container">
               <button class="add-food-button" id="add-water">Add Water</button>
+            </div>
           </div>
-        </div>
+          <header class="meal-header">
+              <h3>Weight</h3>
+          </header>
+          <div class="water-div-container">
+            <div class="add-food-container">
+              <button class="add-food-button" id="add-weight">Weight</button>
+            </div>
+          </div>
         </div>
       
       <section class="meal-area">
@@ -96,16 +96,39 @@
       </section>
       <div class="outer-columns" id="exercise-div">
         <header class="meal-header">
-              <h3>Exercise</h3>
+              <h3>Calculate Calorie Budget</h3>
+              <h4><span id="calorie-budget"></span> calories</h4>
         </header>
         <div class="water-div-container">
           <div class="add-food-container">
             
             <div class = "button-container">
-            <button class="add-food-button" id="add-exercise-button">Add Exercise</button>
+              <button class="add-food-button" id="calculate-calories">Calculate</button>
             </div>
           </div>
         </div>
+        <header class="meal-header">
+          <h3>Exercise</h3>
+            <div>
+              <h4>Calories Burned: <span id="total-exercise"></span> calories</h4>
+            </div>
+        </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+            
+            <div class = "button-container">
+              <button class="add-food-button" id="add-exercise-button">Add Exercise</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+      <section class="goals-area">
+        <div id="weight-over-time-display">
+          <div id="weight-display-filler">
+            <h1>Weight Over Time</h1>
+          </div>
+
         </div>
       </section>
     </main>
@@ -167,6 +190,21 @@
         <label for="exercise-calories">Input Total Calories burned:</label>
         <input type="text" id="exercise-calories" name="exercise-calories">
         <button id="submit-calorie-button-exercise">Submit Calories</button>
+      </div>
+    </div>
+
+    <div id="budget-modal" class="modal">
+      <div class="modal-content">
+        <span id="budget-close">&times;</span>
+        <h2>Basal Metabolic Rate Calculator</h2>
+        <label for="height-inches">What's your height in inches?</label> <br>
+        <input type="text" id="height-inches" name="height-inches"> <br>
+        <label for="weight-pounds">What's your weight in pounds?</label> <br>
+        <input type="text" id="weight-pounds" name="weight-pounds"> <br>
+        <label for="age-years">What's your age in years?</label> <br>
+        <input type="text" id="age-years" name="age-years"> <br>
+        <br>
+        <button id="calc-cal-budget">Calculate</button>
       </div>
     </div>
 

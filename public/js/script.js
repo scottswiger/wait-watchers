@@ -2,19 +2,29 @@ const todayDate = new Date();
 const calories = document.getElementById('calorie-display');
 const water = document.getElementById('total-water');
 const exercise = document.getElementById('total-exercise');
+const budget = document.getElementById('calorie-budget');
 const subBreakfastCalButton = document.getElementById('submit-calorie-button');
 const subLunchCalButton = document.getElementById('submit-calorie-button-lunch');
 const subDinnerCalButton = document.getElementById('submit-calorie-button-dinner');
 const subSnackCalButton = document.getElementById('submit-calorie-button-snack');
 const subWaterButton = document.getElementById('submit-water');
 const subExerciseButton = document.getElementById('submit-calorie-button-exercise');
+const calculator = document.getElementById('calc-cal-budget');
+const remainder = document.getElementById('cal-remain');
+const calPerc = document.getElementById('cal-percentage');
+const root = document.querySelector(':root');
+
+
+//date shit
 let day = todayDate.getDate();
 let month = todayDate.getMonth() + 1;
 let year = todayDate.getFullYear();
 let formattedDate = `${month}-${day}-${year}`;
 const dateElement = document.getElementById('date')
+dateElement.innerHTML = formattedDate;
 
 // tcc stands for total calorie count
+// setting up displays for data from local storage
 let tcc = localStorage.getItem('calories');
 calories.innerHTML = tcc;
 
@@ -24,8 +34,35 @@ water.innerHTML = totalWaterOunces;
 let totalExercise = localStorage.getItem('exercise');
 exercise.innerHTML = totalExercise;
 
+let calorieBudget = localStorage.getItem('calorie-budget');
+budget.innerHTML = calorieBudget;
 
+let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
+remainder.innerHTML = CalorieRemainingBudget;
 
+let caloriePercentage = (Number(tcc)/Number(calorieBudget)) *100;
+console.log(caloriePercentage);
+let roundedCalPercentage = caloriePercentage.toFixed();
+calPerc.innerHTML = roundedCalPercentage;
+
+function snagRoot() {
+  let currentProp = getComputedStyle(root);
+  let currentPropValue = currentProp.getPropertyValue('--width');
+  console.log(currentPropValue);
+}
+snagRoot();
+
+function changeRoot() {
+  let updateProp = roundedCalPercentage + '%';
+  root.style.setProperty('--width', updateProp)
+  let newProp = getComputedStyle(root);
+  let newPropValue = newProp.getPropertyValue('--width');
+  console.log(`New prop: ${newPropValue}`);
+}
+
+changeRoot();
+
+//refreshing displays
 function refreshCalorieCounter() {
   tcc = localStorage.getItem('calories');
   location.reload();
@@ -40,7 +77,14 @@ function refreshExercise() {
   totalExercise = localStorage.getItem('exercise');
   location.reload();
 }
-// add food and calories buttons
+
+function refreshBudget() {
+  calorieBudget = localStorage.getItem('calorie-budget');
+  location.reload();
+}
+
+
+// submit user data buttions
 
 subBreakfastCalButton.addEventListener('click', function(event) {
   event.preventDefault();
@@ -53,6 +97,7 @@ subBreakfastCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subLunchCalButton.addEventListener('click', function(event) {
@@ -118,6 +163,21 @@ subExerciseButton.addEventListener('click', function(event) {
   refreshExercise();
 })
 
+calculator.addEventListener('click', function(event){
+  event.preventDefault();
+  let heightInInches = Number(document.getElementById('height-inches').value);
+  console.log(`Height: ${heightInInches}`);
+  let ageInYears = Number(document.getElementById('age-years').value);
+  console.log(`Age: ${ageInYears}`);
+  let weightInPounds =  Number(document.getElementById('weight-pounds').value);
+  console.log(`Weight: ${weightInPounds}`);
+  let BMR = 66.47 + (6.24*weightInPounds) + (12.7*heightInInches) - (6.75*ageInYears);
+  console.log(`BMR: ${BMR}`);
+  let roundBMR = BMR.toFixed();
+  localStorage.setItem('calorie-budget', roundBMR);
+  refreshBudget();
+})
+
 
 
 // setting up modals
@@ -146,11 +206,11 @@ const eModal = document.getElementById('exercise-modal');
 const exerciseButton = document.getElementById('add-exercise-button');
 let espan = document.getElementById("eclose");
 
+const budgetmodal = document.getElementById('budget-modal');
+const calBudgetButton = document.getElementById('calculate-calories');
+let budgetspan = document.getElementById("budget-close");
 
 
-
-
-dateElement.innerHTML = formattedDate;
 
 // firing modals
 
@@ -194,6 +254,13 @@ exerciseButton.onclick = function() {
 }
 espan.onclick = function() {
   eModal.style.display = "none";
+}
+
+calBudgetButton.onclick = function() {
+  budgetmodal.style.display = "block";
+}
+budgetspan.onclick = function() {
+  budgetmodal.style.display = "none";
 }
 
 
