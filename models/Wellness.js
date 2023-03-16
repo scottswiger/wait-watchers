@@ -39,6 +39,5 @@ Wellness.init(
             modelName: "wellness",
     }  
 );
-// got mysql fixed by changing this modelname above to wellness
 
 module.exports = Wellness;

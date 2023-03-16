@@ -6,7 +6,7 @@ router.use('/profile', profileRoutes);
 
 // Homepage route
 router.use((req, res) => {
-    res.render('profile');
+    res.render('login');
   });
 
 module.exports = router;
