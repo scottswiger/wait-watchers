@@ -59,3 +59,23 @@ new Chart(exChart, {
     }
   }
 });
+
+const lbsChart = document.getElementById('myChart4'); 
+new Chart(lbsChart, {
+  type: 'line',
+  data: {
+    labels: ['Today',],
+    datasets: [{
+      label: 'Calories',
+      data: [200],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
