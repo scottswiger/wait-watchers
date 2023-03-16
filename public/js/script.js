@@ -111,6 +111,7 @@ subLunchCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subDinnerCalButton.addEventListener('click', function(event) {
@@ -124,6 +125,7 @@ subDinnerCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subSnackCalButton.addEventListener('click', function(event) {
@@ -137,6 +139,7 @@ subSnackCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subWaterButton.addEventListener('click', function(event) {
@@ -161,6 +164,7 @@ subExerciseButton.addEventListener('click', function(event) {
   console.log(`You have burned: ${burn}`);
   localStorage.setItem('exercise', burn);
   refreshExercise();
+  changeRoot();
 })
 
 calculator.addEventListener('click', function(event){
