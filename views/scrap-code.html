@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./scrap-code.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -30,6 +30,14 @@
           <div>
             <p id="calorie-display"></p>
           </div>
+          <div>
+            <h2>Total Water</h2>
+            <p><span id="total-water"></span> Ounces of Water!!</p>
+          </div>
+          <div>
+            <h2>Total Exercise</h2>
+            <p><span id="total-exercise"></span> Calories Burned</p>
+          </div>
           <h4>Calorie Budget</h4>
         <div id="calorie-tracker-bar">
         </div>
@@ -42,7 +50,7 @@
           </header>
         <div class="water-div-container">
           <div class="add-food-container">
-              <button class="add-food-button">Add Water</button>
+              <button class="add-food-button" id="add-water">Add Water</button>
           </div>
         </div>
         </div>
@@ -94,7 +102,7 @@
           <div class="add-food-container">
             
             <div class = "button-container">
-            <button class="add-food-button">Add Exercise</button>
+            <button class="add-food-button" id="add-exercise-button">Add Exercise</button>
             </div>
           </div>
         </div>
@@ -142,6 +150,27 @@
       </div>
     </div>
 
-    <script src="./script.js"></script>
+    <div id="water-modal" class="modal">
+      <div class="modal-content">
+        <span id="wclose">&times;</span>
+        <h2>How much water did you drink?</h2>
+        <label for="water-ounces">Ounces of Water:</label>
+        <input type="text" id="water-ounces" name="water-ounces">
+        <button id="submit-water">Submit Water</button>
+      </div>
+    </div>
+
+    <div id="exercise-modal" class="modal">
+      <div class="modal-content">
+        <span id="eclose">&times;</span>
+        <h2>did you work out?</h2>
+        <label for="exercise-calories">Input Total Calories burned:</label>
+        <input type="text" id="exercise-calories" name="exercise-calories">
+        <button id="submit-calorie-button-exercise">Submit Calories</button>
+      </div>
+    </div>
+
+
+    <script src="../public/js/script.js"></script>
   </body>
 </html>

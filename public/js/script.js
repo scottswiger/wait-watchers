@@ -1,9 +1,13 @@
 const todayDate = new Date();
 const calories = document.getElementById('calorie-display');
+const water = document.getElementById('total-water');
+const exercise = document.getElementById('total-exercise');
 const subBreakfastCalButton = document.getElementById('submit-calorie-button');
 const subLunchCalButton = document.getElementById('submit-calorie-button-lunch');
 const subDinnerCalButton = document.getElementById('submit-calorie-button-dinner');
 const subSnackCalButton = document.getElementById('submit-calorie-button-snack');
+const subWaterButton = document.getElementById('submit-water');
+const subExerciseButton = document.getElementById('submit-calorie-button-exercise');
 let day = todayDate.getDate();
 let month = todayDate.getMonth() + 1;
 let year = todayDate.getFullYear();
@@ -14,9 +18,29 @@ const dateElement = document.getElementById('date')
 let tcc = localStorage.getItem('calories');
 calories.innerHTML = tcc;
 
+let totalWaterOunces = localStorage.getItem('water');
+water.innerHTML = totalWaterOunces;
+
+let totalExercise = localStorage.getItem('exercise');
+exercise.innerHTML = totalExercise;
+
+
+
 function refreshCalorieCounter() {
   tcc = localStorage.getItem('calories');
+  location.reload();
 }
+
+function refreshWater() {
+  totalWaterOunces = localStorage.getItem('water');
+  location.reload();
+}
+
+function refreshExercise() {
+  totalExercise = localStorage.getItem('exercise');
+  location.reload();
+}
+// add food and calories buttons
 
 subBreakfastCalButton.addEventListener('click', function(event) {
   event.preventDefault();
@@ -70,10 +94,33 @@ subSnackCalButton.addEventListener('click', function(event) {
   refreshCalorieCounter();
 })
 
+subWaterButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  let h20sub = Number(document.getElementById('water-ounces').value);
+  let ounces = h20sub;
+  console.log(ounces);
+  let currentH20 = Number(localStorage.getItem('water'));
+  ounces += currentH20;
+  console.log(`You have accrued this amount of water: ${ounces}`);
+  localStorage.setItem('water', ounces);
+  refreshWater();
+})
+
+subExerciseButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  let exerciseCal = Number(document.getElementById('exercise-calories').value);
+  let burn = exerciseCal;
+  console.log(burn);
+  let currentExercise = Number(localStorage.getItem('exercise'));
+  burn += currentExercise;
+  console.log(`You have burned: ${burn}`);
+  localStorage.setItem('exercise', burn);
+  refreshExercise();
+})
 
 
 
-
+// setting up modals
 
 const bModal = document.getElementById('breakfast-modal');
 const breakfastButton = document.getElementById('add-breakfast');
@@ -91,12 +138,21 @@ const sModal = document.getElementById('snack-modal');
 const snackButton = document.getElementById('add-snack');
 let sspan = document.getElementById("sclose");
 
+const wModal = document.getElementById('water-modal');
+const waterButton = document.getElementById('add-water');
+let wspan = document.getElementById("wclose");
+
+const eModal = document.getElementById('exercise-modal');
+const exerciseButton = document.getElementById('add-exercise-button');
+let espan = document.getElementById("eclose");
+
 
 
 
 
 dateElement.innerHTML = formattedDate;
 
+// firing modals
 
 breakfastButton.onclick = function() {
   bModal.style.display = "block";
@@ -124,6 +180,20 @@ snackButton.onclick = function() {
 }
 sspan.onclick = function() {
   sModal.style.display = "none";
+}
+
+waterButton.onclick = function() {
+  wModal.style.display = "block";
+}
+wspan.onclick = function() {
+  wModal.style.display = "none";
+}
+
+exerciseButton.onclick = function() {
+  eModal.style.display = "block";
+}
+espan.onclick = function() {
+  eModal.style.display = "none";
 }
 
 
