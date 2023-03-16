@@ -39,3 +39,23 @@ new Chart(waterChart, {
     }
   }
 });
+
+const exChart = document.getElementById('myChart3'); 
+new Chart(exChart, {
+  type: 'bar',
+  data: {
+    labels: ['Today',],
+    datasets: [{
+      label: 'Calories',
+      data: [2000],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
