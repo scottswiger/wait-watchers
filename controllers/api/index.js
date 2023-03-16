@@ -4,6 +4,7 @@ const postRoutes = require('./post-routes');
 
 router.use('/users', userRoutes);
 router.use('/post', postRoutes);
+router.use('/profile', postRoutes);
 
 // Homepage route
 router.use((req, res) => {

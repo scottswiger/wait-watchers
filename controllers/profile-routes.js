@@ -20,7 +20,6 @@ router.get('/users', async (req,res) => {
 // Gets your profile & wellness stats if you are logged in.
 router.get('/', withAuth, async (req, res) => {
   try {
-    // const data = await Wellness.findAll({ where: {user_id: User.id }});
     const data = await Wellness.findAll({ where: { user_id: req.session.user_id }});
     if (!data) {
       res.status(404).json({ message: "No data found" });
@@ -43,7 +42,9 @@ router.get('/login', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
+
+
 
 
 // View another user's profile -- Not functional atm
