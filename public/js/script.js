@@ -1,11 +1,13 @@
 const todayDate = new Date();
 const calories = document.getElementById('calorie-display');
 const water = document.getElementById('total-water');
+const exercise = document.getElementById('total-exercise');
 const subBreakfastCalButton = document.getElementById('submit-calorie-button');
 const subLunchCalButton = document.getElementById('submit-calorie-button-lunch');
 const subDinnerCalButton = document.getElementById('submit-calorie-button-dinner');
 const subSnackCalButton = document.getElementById('submit-calorie-button-snack');
 const subWaterButton = document.getElementById('submit-water');
+const subExerciseButton = document.getElementById('submit-calorie-button-exercise');
 let day = todayDate.getDate();
 let month = todayDate.getMonth() + 1;
 let year = todayDate.getFullYear();
@@ -19,6 +21,10 @@ calories.innerHTML = tcc;
 let totalWaterOunces = localStorage.getItem('water');
 water.innerHTML = totalWaterOunces;
 
+let totalExercise = localStorage.getItem('exercise');
+exercise.innerHTML = totalExercise;
+
+
 
 function refreshCalorieCounter() {
   tcc = localStorage.getItem('calories');
@@ -30,6 +36,10 @@ function refreshWater() {
   location.reload();
 }
 
+function refreshExercise() {
+  totalExercise = localStorage.getItem('exercise');
+  location.reload();
+}
 // add food and calories buttons
 
 subBreakfastCalButton.addEventListener('click', function(event) {
@@ -94,6 +104,18 @@ subWaterButton.addEventListener('click', function(event) {
   console.log(`You have accrued this amount of water: ${ounces}`);
   localStorage.setItem('water', ounces);
   refreshWater();
+})
+
+subExerciseButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  let exerciseCal = Number(document.getElementById('exercise-calories').value);
+  let burn = exerciseCal;
+  console.log(burn);
+  let currentExercise = Number(localStorage.getItem('exercise'));
+  burn += currentExercise;
+  console.log(`You have burned: ${burn}`);
+  localStorage.setItem('exercise', burn);
+  refreshExercise();
 })
 
 
