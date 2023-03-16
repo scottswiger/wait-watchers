@@ -1,0 +1,119 @@
+<main>
+<div>
+    {{#each stats as | stat | }}
+    <p>Calories Per Day: {{stat.caloriesPerDay}}</p>
+    <p>Active Time: {{stat.minutesExercised}}</p>
+    <p>Glasses of Water: {{stat.ouncesOfWater}}</p>
+    {{/each}}
+</div>
+
+      <header id="tracker-label">
+        <h2 class="section-label" >Tracker Bar</h2>
+      </header>
+      <div id="calorie-tracker-div">
+          <h4>Calorie Budget</h4>
+        <div id="calorie-tracker-bar">
+        </div>
+          <h4>Calories Consumed:<span id="calories-consumed"></span></h4>
+      </div>
+      <section id="tracking-area">
+        <div class="outer-columns">
+          <header class="meal-header">
+              <h3>Water</h3>
+          </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+              <button class="add-food-button">Add Water</button>
+          </div>
+        </div>
+        </div>
+      
+      <section class="meal-area">
+        <div class="meal-div-container">
+        <div class="add-food-container">
+          <header class="meal-header">
+            <h3>Breakfast</h3>
+          </header>
+          
+          <button class="add-food-button" id="add-breakfast">Add Food</button>
+        </div>
+      </div>
+
+      <div class="meal-div-container">
+        <div class="add-food-container">
+          <header class="meal-header">
+            <h3>Lunch</h3>
+          </header>
+          
+          <button class="add-food-button" id="add-lunch">Add Food</button>
+        </div>
+      </div>
+      <div class="meal-div-container">
+        <div class="add-food-container">
+          <header class="meal-header">
+            <h3>Dinner</h3>
+          </header>
+          
+          <button class="add-food-button" id="add-dinner">Add Food</button>
+        </div>
+      </div>
+      <div class="meal-div-container">
+        <div class="add-food-container">
+          <header class="meal-header">
+            <h3>Snacks</h3>
+          </header>
+          
+          <button class="add-food-button" id="add-snack">Add Food</button>
+        </div>
+      </div>
+      </section>
+      <div class="outer-columns" id="exercise-div">
+        <header class="meal-header">
+              <h3>Exercise</h3>
+        </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+            
+            <div class = "button-container">
+            <button class="add-food-button">Add Exercise</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+    </main>
+    
+    <div id="breakfast-modal" class="modal">
+      <div class="modal-content">
+        <span id="bclose">&times;</span>
+        <h2>What did you have for breakfast?</h2>
+        <input type="text">
+      </div>
+    </div>
+
+    <div id="lunch-modal" class="modal">
+      <div class="modal-content">
+        <span id="lclose">&times;</span>
+        <h2>What did you have for lunch?</h2>
+        <input type="text">
+      </div>
+    </div>
+
+    <div id="dinner-modal" class="modal">
+      <div class="modal-content">
+        <span id="dclose">&times;</span>
+        <h2>What did you have for Dinner?</h2>
+        <input type="text">
+      </div>
+    </div>
+
+    <div id="snack-modal" class="modal">
+      <div class="modal-content">
+        <span id="sclose">&times;</span>
+        <h2>What did you have for a Snack?</h2>
+        <input type="text">
+      </div>
+    </div>
+
+
+    
