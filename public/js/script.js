@@ -15,6 +15,7 @@ const calPerc = document.getElementById('cal-percentage');
 const root = document.querySelector(':root');
 
 
+
 //date shit
 let day = todayDate.getDate();
 let month = todayDate.getMonth() + 1;
@@ -40,7 +41,7 @@ budget.innerHTML = calorieBudget;
 let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
 remainder.innerHTML = CalorieRemainingBudget;
 
-let caloriePercentage = (Number(tcc)/Number(calorieBudget)) *100;
+let caloriePercentage = (Number(tcc)/Number(CalorieRemainingBudget)) *100;
 console.log(caloriePercentage);
 let roundedCalPercentage = caloriePercentage.toFixed();
 calPerc.innerHTML = roundedCalPercentage;
@@ -111,6 +112,7 @@ subLunchCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subDinnerCalButton.addEventListener('click', function(event) {
@@ -124,6 +126,7 @@ subDinnerCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subSnackCalButton.addEventListener('click', function(event) {
@@ -137,6 +140,7 @@ subSnackCalButton.addEventListener('click', function(event) {
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
   refreshCalorieCounter();
+  changeRoot();
 })
 
 subWaterButton.addEventListener('click', function(event) {
@@ -161,6 +165,7 @@ subExerciseButton.addEventListener('click', function(event) {
   console.log(`You have burned: ${burn}`);
   localStorage.setItem('exercise', burn);
   refreshExercise();
+  changeRoot();
 })
 
 calculator.addEventListener('click', function(event){
