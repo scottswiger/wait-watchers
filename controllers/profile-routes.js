@@ -5,17 +5,15 @@ const withAuth = require('../utils/auth');
 
 
 // Gets your profile & wellness stats if you are logged in.
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const data = await Wellness.findAll();
-    // const data = await Wellness.findAll({where: {user_id: req.session.user_id}});
     if (!data) {
       res.status(404).json({ message: "No data found" });
       return;
     }
 
     const stats = data.map(wellness => wellness.get({ plain: true }));
-
     res.render('profile', {stats})
   } catch (err) {
     res.status(500).json(err);

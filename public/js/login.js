@@ -20,6 +20,7 @@ const loginFormHandler = async (event) => {
 };
 
 const signupFormHandler = async (event) => {
+  console.log("Attempting to sign you up...");
   event.preventDefault();
 
   const username = document.querySelector('#username-signup').value.trim();
