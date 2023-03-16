@@ -211,7 +211,9 @@ h1, h2, h3, h4, h5, h6, button {
 #bclose, 
 #lclose, 
 #dclose, 
-#sclose {
+#sclose,
+#wclose,
+#eclose {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -221,7 +223,9 @@ h1, h2, h3, h4, h5, h6, button {
 #bclose:hover, #bclose:focus, 
 #lclose:hover, #lclose:focus, 
 #dclose:hover, #dclose:focus,
-#sclose:hover, #sclose:focus {
+#sclose:hover, #sclose:focus,
+#wclose:hover, #wclose:focus,
+#eclose:hover, #eclose:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
