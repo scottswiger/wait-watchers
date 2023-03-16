@@ -12,6 +12,7 @@
     --oxfordblue: #0C1B33;
     --onyx: #2E3532;
     --azure: #EBFFFD;
+    --width: ;
 
 
 }
@@ -75,10 +76,19 @@ body {
     justify-content: center;
     text-align: center;
 }
+#tracker-bar-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: var(--lightseagreen);
+}
 
 #calorie-tracker-bar{
     background-color: var(--mindaro);
-    width: 80%;
+    width: var(--width);
     height: 100px;
     /* margin-top: 200px; */
     text-align: center;
@@ -141,7 +151,7 @@ body {
     height: 100%;
     /* background-color: antiquewhite; */
     display: flex;
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
 }
 
 .outer-columns{
@@ -208,10 +218,36 @@ h1, h2, h3, h4, h5, h6, button {
     width: 80%;
 }
 
+.goals-area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 30px;
+    border: 3px solid var(--onyx);
+    border-radius: 20px;
+}
+
+#weight-over-time-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+#weight-display-filler {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    align-content: center;
+}
+
 #bclose, 
 #lclose, 
 #dclose, 
-#sclose {
+#sclose,
+#wclose,
+#eclose {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -221,8 +257,14 @@ h1, h2, h3, h4, h5, h6, button {
 #bclose:hover, #bclose:focus, 
 #lclose:hover, #lclose:focus, 
 #dclose:hover, #dclose:focus,
-#sclose:hover, #sclose:focus {
+#sclose:hover, #sclose:focus,
+#wclose:hover, #wclose:focus,
+#eclose:hover, #eclose:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#cal-percentage {
+    display: none;
 }
