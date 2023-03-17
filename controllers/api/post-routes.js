@@ -4,8 +4,12 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-      console.log(req.body, "Hello George");
-      const newSubmission = await Wellness.create(req.body);
+      const newSubmission = await Wellness.create({
+        caloriesPerDay: req.body.tcc,
+        minutesExercised: req.body.totalExercise,
+        ouncesOfWater: req.body.totalWaterOunces,
+        user_id: req.session.user_id,
+      });
       res.json(newSubmission);
     } catch (err) {
       res.status(500).json(err);

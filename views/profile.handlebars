@@ -2,9 +2,10 @@
   {{#if logged_in}}
 <div>
     {{#each stats as | stat | }}
-    <p>Calories Per Day: {{stat.caloriesPerDay}}</p>
-    <p>Active Time: {{stat.minutesExercised}}</p>
-    <p>Glasses of Water: {{stat.ouncesOfWater}}</p>
+    <h1>Daily Averages...</h1>
+    <p>Calories Consumed: {{stat.caloriesPerDay}}</p>
+    <p>Minutes of exercise: {{stat.minutesExercised}}</p>
+    <p>Ounces of water: {{stat.ouncesOfWater}}</p>
     {{/each}}
 </div>
 {{/if}}

@@ -184,22 +184,25 @@ calculator.addEventListener('click', function(event){
   refreshBudget();
 })
 
-saveButton.addEventListener('click', function(event) {
-  const response = fetch("/profile", {
+saveButton.addEventListener('click', async function(event) {
+  const response = await fetch("/api/profile", {
     method: 'POST',
     body: JSON.stringify({
        tcc,
        totalWaterOunces,
-       totalExercise
-    })
+       totalExercise,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+  ((response) => response.json())
+  ((data) => console.log(data));
 
   if (response.ok) {
-    console.log("Get lost fatass")
+    alert("Data logged.")
   } else {
-    alert('Winner');
+    alert('Data not logged.');
   }
 
   
