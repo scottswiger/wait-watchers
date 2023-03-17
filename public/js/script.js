@@ -13,6 +13,7 @@ const calculator = document.getElementById('calc-cal-budget');
 const remainder = document.getElementById('cal-remain');
 const calPerc = document.getElementById('cal-percentage');
 const root = document.querySelector(':root');
+const saveButton = document.getElementById('save-button');
 
 
 
@@ -182,6 +183,31 @@ calculator.addEventListener('click', function(event){
   localStorage.setItem('calorie-budget', roundBMR);
   refreshBudget();
 })
+
+saveButton.addEventListener('click', function(event) {
+  const response = fetch("/profile", {
+    method: 'POST',
+    body: JSON.stringify({
+       tcc,
+       totalWaterOunces,
+       totalExercise
+    })
+  })
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+  if (response.ok) {
+    console.log("Get lost fatass")
+  } else {
+    alert('Winner');
+  }
+
+  
+
+  //Make the method POST the data to the backend
+  //Stringy the value from the form and send it to the backend
+
+});
 
 
 
