@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
   try {
     // const data = await Wellness.findAll({ where: {user_id: User.id }});
     const data = await Wellness.findAll({ where: { user_id: req.session.user_id }});
-    if (!data) {
+    if (data) {
       res.status(404).json({ message: "No data found" });
       return;
     }

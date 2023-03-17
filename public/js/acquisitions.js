@@ -1,4 +1,8 @@
 // const { Chart } = require("chart.js")
+let water = require("totalWaterOunces")
+console.log("this is water for total Water Ounces")
+
+// let exercise = require("totalExercise")
 
 const ctx = document.getElementById('myChart');         
 new Chart(ctx, {
@@ -27,7 +31,7 @@ new Chart(waterChart, {
     labels: ['Today',],
     datasets: [{
       label: 'Water Intake',
-      data: [64],
+      data: [water],
       borderWidth: 1
     }]
   },
@@ -47,7 +51,7 @@ new Chart(exChart, {
     labels: ['Today',],
     datasets: [{
       label: 'Calories',
-      data: [2000],
+      data: [200],
       borderWidth: 1
     }]
   },
