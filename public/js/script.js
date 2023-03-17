@@ -241,6 +241,9 @@ const budgetmodal = document.getElementById('budget-modal');
 const calBudgetButton = document.getElementById('calculate-calories');
 let budgetspan = document.getElementById("budget-close");
 
+const weightModal = document.getElementById('weight-modal');
+const weightButton = document.getElementById('calculate-calories');
+
 
 
 // firing modals
