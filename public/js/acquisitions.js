@@ -1,28 +1,28 @@
 // const { Chart } = require("chart.js")
-let water = require("totalWaterOunces")
-console.log("this is water for total Water Ounces")
+// let water = require(totalWaterOunces)
+// console.log("this is water for total Water Ounces")
 
-let exercise = require("totalExercise")
+// let exercise = require(totalExercise)
 
-// const ctx = document.getElementById('myChart');         
-// new Chart(ctx, {
-//   type: 'doughnut',
-//   data: {
-//     labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-//     datasets: [{
-//       label: 'Macro Breakdown',
-//       data: [2, 5, 8, 5, 7, 11, 3],
-//       borderWidth: 1
-//     }]
-//   },
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true
-//       }
-//     }
-//   }
-// });
+const ctx = document.getElementById('myChart');         
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    datasets: [{
+      label: 'Macro Breakdown',
+      data: [2, 5, 8, 5, 7, 11, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 
 const waterChart = document.getElementById('myChart2');         
 new Chart(waterChart, {
@@ -31,7 +31,7 @@ new Chart(waterChart, {
     labels: ['Today',],
     datasets: [{
       label: 'Water Intake',
-      data: [water],
+      data: [64],
       borderWidth: 1
     }]
   },
@@ -51,7 +51,7 @@ new Chart(exChart, {
     labels: ['Today',],
     datasets: [{
       label: 'Calories',
-      data: [exercise],
+      data: [2400],
       borderWidth: 1
     }]
   },
@@ -68,10 +68,10 @@ const lbsChart = document.getElementById('myChart4');
 new Chart(lbsChart, {
   type: 'line',
   data: {
-    labels: ['Today','Anotherday','Nextday',],
+    labels: ['Today','Tomorrow','Nextday','Days'],
     datasets: [{
-      label: 'Calories',
-      data: [200,197,199],
+      label: 'Lbs',
+      data: [200,197,199,88],
       borderWidth: 1
     }]
   },
