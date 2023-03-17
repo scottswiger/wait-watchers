@@ -24,6 +24,11 @@ let formattedDate = `${month}-${day}-${year}`;
 const dateElement = document.getElementById('date')
 dateElement.innerHTML = formattedDate;
 
+document.addEventListener("DOMContentLoaded", caloriesM);
+
+const caloriesM = function initApp() {
+  const calories = document.getElementById('calorie-display');
+}
 // tcc stands for total calorie count
 // setting up displays for data from local storage
 let tcc = localStorage.getItem('calories');
@@ -41,7 +46,7 @@ budget.innerHTML = calorieBudget;
 let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
 remainder.innerHTML = CalorieRemainingBudget;
 
-let caloriePercentage = (Number(tcc)/Number(CalorieRemainingBudget)) *100;
+let caloriePercentage = (Number(tcc)/Number(calorieBudget)) *100;
 console.log(caloriePercentage);
 let roundedCalPercentage = caloriePercentage.toFixed();
 calPerc.innerHTML = roundedCalPercentage;
