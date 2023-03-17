@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
+      console.log(req.body);
       const newSubmission = await Wellness.create(req.body);
       res.json(newSubmission);
     } catch (err) {
