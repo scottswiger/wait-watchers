@@ -283,3 +283,25 @@ h1, h2, h3, h4, h5, h6, button {
     background-color: var(--khaki);
     font-size: larger;
 }
+@media screen and (max-width: 480px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  #tracking-area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+  }
+  .meal-area{
+    width: 100%;
+    margin: auto;
+  }
+  .outer-columns{
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+  }
+}

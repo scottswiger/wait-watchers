@@ -42,7 +42,9 @@ router.get('/login', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
+
+
 
 
 // View another user's profile -- Not functional atm
