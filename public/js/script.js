@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", caloriesM);
 
 const caloriesM = function initApp() {
   const calories = document.getElementById('calorie-display');
+  return calories;
 }
 // tcc stands for total calorie count
 // setting up displays for data from local storage
