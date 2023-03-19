@@ -9,24 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <title>Nutrition Tracker</title>
+    <title>Wellness Watcher</title>
   </head>
   <body>
     <header id="top-header">
       <div id="title-date">
-        <h1>Wait Watchers</h1>
-        <h4 id="date">Date</h4>
-        <div id="navbar">
+        <h1>Wellness Watcher</h1>
+        {{#if loggedIn}}
+        <h4>Logged in as {{user}}</h4>
+          <h4 id="date">Date</h4>
+        {{/if}}
+      
+        {{!-- <div id="navbar">
           <a href="">Goals</a>
           <a href="">Profile</a>
           <a href="">Calculator</a>
-        </div>
+        </div> --}}
       </div>
     </header>
     {{{body}}}
     <footer>
-        <h2>Testing Footer</h2>
+        <br><button id="logout">Logout</button>
+        <h2></h2>
     </footer>
-    <script src="/js/script.js"></script>
+    <script src="/js/logout.js"></script>
     </body>
 </html>
