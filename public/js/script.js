@@ -347,8 +347,6 @@ weightButton.onclick = function() {
 weightCloseSpan.onclick = function() {
   weightModal.style.display = "none";
 }
-// module.exports = { totalWaterOunces };
-// module.exports = { totalExercise };
 
 
 
