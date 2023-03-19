@@ -3,12 +3,14 @@ const calories = document.getElementById('calorie-display');
 const water = document.getElementById('total-water');
 const exercise = document.getElementById('total-exercise');
 const budget = document.getElementById('calorie-budget');
+const weightSpan = document.getElementById('weight-span')
 const subBreakfastCalButton = document.getElementById('submit-calorie-button');
 const subLunchCalButton = document.getElementById('submit-calorie-button-lunch');
 const subDinnerCalButton = document.getElementById('submit-calorie-button-dinner');
 const subSnackCalButton = document.getElementById('submit-calorie-button-snack');
 const subWaterButton = document.getElementById('submit-water');
 const subExerciseButton = document.getElementById('submit-calorie-button-exercise');
+const subWeightButton =  document.getElementById('submit-weight');
 const calculator = document.getElementById('calc-cal-budget');
 const remainder = document.getElementById('cal-remain');
 const calPerc = document.getElementById('cal-percentage');
@@ -50,6 +52,10 @@ exercise.innerHTML = totalExercise;
 
 let calorieBudget = localStorage.getItem('calorie-budget');
 budget.innerHTML = calorieBudget;
+
+let weightInput = localStorage.getItem('weight');
+weightSpan.innerHTML = weightInput;
+
 
 let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
 remainder.innerHTML = CalorieRemainingBudget;
@@ -94,6 +100,11 @@ function refreshExercise() {
 
 function refreshBudget() {
   calorieBudget = localStorage.getItem('calorie-budget');
+  location.reload();
+}
+
+function refreshWeight() {
+  weightInput = localStorage.getItem('weight');
   location.reload();
 }
 
@@ -187,6 +198,13 @@ subExerciseButton.addEventListener('click', function(event) {
   changeRoot();
 })
 
+subWeightButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  let weightValue = Number(document.getElementById('weight-input').value);
+  localStorage.setItem('weight', weightValue);
+  refreshWeight();
+})
+
 calculator.addEventListener('click', function(event){
   event.preventDefault();
   let heightInInches = Number(document.getElementById('height-inches').value);
@@ -266,6 +284,10 @@ const budgetmodal = document.getElementById('budget-modal');
 const calBudgetButton = document.getElementById('calculate-calories');
 let budgetspan = document.getElementById("budget-close");
 
+const weightModal = document.getElementById('weight-modal');
+const weightButton = document.getElementById('add-weight');
+let weightCloseSpan =  document.getElementById('weightclose');
+
 
 
 // firing modals
@@ -319,6 +341,12 @@ budgetspan.onclick = function() {
   budgetmodal.style.display = "none";
 }
 
+weightButton.onclick = function() {
+  weightModal.style.display = "block";
+}
+weightCloseSpan.onclick = function() {
+  weightModal.style.display = "none";
+}
 // module.exports = { totalWaterOunces };
 // module.exports = { totalExercise };
 
