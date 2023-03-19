@@ -7,9 +7,12 @@ const session = require('express-session');
 const hbs = exphbs.create({});
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
+const env = require('dotenv');
+
+env.config();
 // Set up sessions for log-ins
 const sess = {
-    secret: 'Super secret secret',
+    secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,

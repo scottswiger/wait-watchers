@@ -29,7 +29,8 @@ router.get('/', withAuth, async (req, res) => {
     const stats = data.map(wellness => wellness.get({ plain: true }));
     res.render('profile', {
       stats,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
+      user: req.session.user,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -14,6 +14,14 @@ const remainder = document.getElementById('cal-remain');
 const calPerc = document.getElementById('cal-percentage');
 const root = document.querySelector(':root');
 const saveButton = document.getElementById('save-button');
+const wipeButton = document.getElementById('wipe-button');
+
+// Button to wipe local storage
+
+// wipeButton.onclick = function() {
+//   console.log("Wiping current local values...")
+//   window.localStorage.clear();
+// };
 
 
 
@@ -25,12 +33,6 @@ let formattedDate = `${month}-${day}-${year}`;
 const dateElement = document.getElementById('date')
 dateElement.innerHTML = formattedDate;
 
-document.addEventListener("DOMContentLoaded", caloriesM);
-
-const caloriesM = function initApp() {
-  const calories = document.getElementById('calorie-display');
-  return calories;
-}
 // tcc stands for total calorie count
 // setting up displays for data from local storage
 let tcc = localStorage.getItem('calories');
@@ -48,7 +50,7 @@ budget.innerHTML = calorieBudget;
 let CalorieRemainingBudget = Number(calorieBudget) - Number(tcc) + Number(totalExercise);
 remainder.innerHTML = CalorieRemainingBudget;
 
-let caloriePercentage = (Number(tcc)/Number(calorieBudget)) *100;
+let caloriePercentage = (Number(tcc)/Number(CalorieRemainingBudget)) *100;
 console.log(caloriePercentage);
 let roundedCalPercentage = caloriePercentage.toFixed();
 calPerc.innerHTML = roundedCalPercentage;
@@ -190,7 +192,12 @@ calculator.addEventListener('click', function(event){
   refreshBudget();
 })
 
+
+
 saveButton.addEventListener('click', async function(event) {
+    // WIPES local storage after submission.
+    window.localStorage.clear();
+    alert("Data logged");
   const response = await fetch("/api/profile", {
     method: 'POST',
     body: JSON.stringify({
@@ -200,16 +207,15 @@ saveButton.addEventListener('click', async function(event) {
     }),
     headers: {
       'Content-Type': 'application/json',
-    },
+    }
+    
   })
   ((response) => response.json())
   ((data) => console.log(data));
 
-  if (response.ok) {
-    alert("Data logged.")
-  } else {
-    alert('Data not logged.');
-  }
+
+
+ 
 
   
 
@@ -249,9 +255,6 @@ let espan = document.getElementById("eclose");
 const budgetmodal = document.getElementById('budget-modal');
 const calBudgetButton = document.getElementById('calculate-calories');
 let budgetspan = document.getElementById("budget-close");
-
-const weightModal = document.getElementById('weight-modal');
-const weightButton = document.getElementById('calculate-calories');
 
 
 

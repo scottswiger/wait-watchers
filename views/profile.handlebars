@@ -1,14 +1,5 @@
 <main>
-  {{#if logged_in}}
-<div>
-    {{#each stats as | stat | }}
-    <h1>Daily Averages...</h1>
-    <p>Calories Consumed: {{stat.caloriesPerDay}}</p>
-    <p>Minutes of exercise: {{stat.minutesExercised}}</p>
-    <p>Ounces of water: {{stat.ouncesOfWater}}</p>
-    {{/each}}
-</div>
-{{/if}}
+
       <header id="tracker-label">
         <h2 class="section-label" >Tracker Bar</h2>
       </header>
@@ -197,6 +188,25 @@
     <div id="save-button-div">
       <button id="save-button">Save Daily Totals</button>
     </div>
+      {{#if loggedIn}}
+<div id="stats">
+    <h2 style="display:flex !important; justify-content:space-around !important;">Recent Stats</h2>
+    <div class="wellness">
+      <p style="font-size: 1.3em;"><strong>Calories Consumed</strong></p>
+      <p style="font-size: 1.3em;"><strong>Calories Burned with Exercise</strong></p>
+      <p style="font-size: 1.3em;"><strong>Ounces of Water</strong></p>
+    </div>
+    {{#each stats as | stat | }}
+    <div class="wellness">
+    <p>{{stat.caloriesPerDay}}</p>
+    <p>{{stat.minutesExercised}}</p>
+    <p>{{stat.ouncesOfWater}}</p>
+    </div>
+    {{/each}}
+</div>
 
+{{/if}}
+    <br><button id="wipe-button" style="display:inline-flex">Whoops, wipe current data</button>
 
+    <script src="/js/script.js"></script>
     
