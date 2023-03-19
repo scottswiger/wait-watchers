@@ -24,6 +24,8 @@
 //   }
 // });
 
+
+//water Chart and function
 const waterChart = document.getElementById('myChart2');         
 new Chart(waterChart, {
   type: 'bar',
@@ -45,6 +47,7 @@ new Chart(waterChart, {
   }
 });
 
+// exercise Chart and function
 const exChart = document.getElementById('myChart3'); 
 new Chart(exChart, {
   type: 'bar',
