@@ -1,28 +1,28 @@
 // const { Chart } = require("chart.js")
-// let water = require(totalWaterOunces)
+// let water = require('./script',totalWaterOunces)
 // console.log("this is water for total Water Ounces")
 
 // let exercise = require(totalExercise)
 
-const ctx = document.getElementById('myChart');         
-new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    datasets: [{
-      label: 'Macro Breakdown',
-      data: [2, 5, 8, 5, 7, 11, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+// const ctx = document.getElementById('myChart');         
+// new Chart(ctx, {
+//   type: 'doughnut',
+//   data: {
+//     labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+//     datasets: [{
+//       label: 'Macro Breakdown',
+//       data: [2, 5, 8, 5, 7, 11, 3],
+//       borderWidth: 1
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true
+//       }
+//     }
+//   }
+// });
 
 const waterChart = document.getElementById('myChart2');         
 new Chart(waterChart, {
@@ -31,8 +31,9 @@ new Chart(waterChart, {
     labels: ['Today',],
     datasets: [{
       label: 'Water Intake',
-      data: [64],
+      data: [window.localStorage.getItem('water')],
       borderWidth: 1
+
     }]
   },
   options: {
@@ -50,8 +51,8 @@ new Chart(exChart, {
   data: {
     labels: ['Today',],
     datasets: [{
-      label: 'Calories',
-      data: [2400],
+      label: 'Calories Burned',
+      data: [window.localStorage.getItem('exercise')],
       borderWidth: 1
     }]
   },
@@ -71,7 +72,7 @@ new Chart(lbsChart, {
     labels: ['Today','Tomorrow','Nextday','Days'],
     datasets: [{
       label: 'Lbs',
-      data: [200,197,199,88],
+      data: [200,167,199,88],
       borderWidth: 1
     }]
   },
