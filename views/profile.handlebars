@@ -24,6 +24,7 @@
           </div>
           <header class="meal-header">
               <h3>Weight</h3>
+              <h4>My Weight is: <span id="weight-span"></span> Pounds</h4>
           </header>
           <div class="water-div-container">
             <div class="add-food-container">
@@ -174,6 +175,16 @@
         <input type="text" id="age-years" name="age-years"> <br>
         <br>
         <button id="calc-cal-budget">Calculate</button>
+      </div>
+    </div>
+
+    <div id="weight-modal" class="modal">
+      <div class="modal-content">
+        <span id="weightclose">&times;</span>
+        <h2>did you work out?</h2>
+        <label for="weight-input">Input Total Calories burned:</label>
+        <input type="text" id="weight-input" name="weight-input">
+        <button id="submit-weight">Submit Calories</button>
       </div>
     </div>
 
