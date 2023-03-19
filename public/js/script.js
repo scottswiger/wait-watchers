@@ -319,6 +319,8 @@ budgetspan.onclick = function() {
   budgetmodal.style.display = "none";
 }
 
+// module.exports = { totalWaterOunces };
+// module.exports = { totalExercise };
 
 
 

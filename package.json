@@ -10,5 +10,22 @@
     "mysql2": "^3.2.0",
     "passport": "^0.6.0",
     "sequelize": "^6.29.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "wait-watchers",
+  "description": "Calorie and exercise tracking app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottswiger/wait-watchers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottswiger/wait-watchers/issues"
+  },
+  "homepage": "https://github.com/scottswiger/wait-watchers#readme"
 }

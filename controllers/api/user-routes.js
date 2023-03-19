@@ -15,7 +15,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.loggedIn =true;
 
-      res.status(200).json(dbUserData);
+      // res.status(200).json(dbUserData);
+      res.redirect('/profile');
     });
   } catch (err) {
     console.log(err);

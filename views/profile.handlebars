@@ -2,6 +2,8 @@
 
       <header id="tracker-label">
         <h2 class="section-label" >Tracker Bar</h2>
+        <canvas id="myChart" width="50px" height="50px">        
+        </canvas>
       </header>
       <div id="calorie-tracker-div">
           <h4>Calories Remaining: <span id="cal-remain"></span></h4>
@@ -14,6 +16,9 @@
       <section id="tracking-area">
         <div class="outer-columns">
           <header class="meal-header">
+              <h3>Water</h3>
+              <canvas id="myChart2">  
+</canvas>
             <h3>Water</h3>
             <h4>Ounces Consumed: <span id="total-water"></span> ounces</h4>
           </header>
@@ -73,6 +78,21 @@
       </section>
       <div class="outer-columns" id="exercise-div">
         <header class="meal-header">
+              <h3>Calculate Calorie Budget</h3>
+              <h4><span id="calorie-budget"></span> calories</h4>
+        </header>
+        <div class="water-div-container">
+          <div class="add-food-container">
+            
+            <div class = "button-container">
+              <button class="add-food-button" id="calculate-calories">Calculate</button>
+            </div>
+          </div>
+        </div>
+        <header class="meal-header">
+              <h3>Exercise</h3>
+              <canvas id="myChart3">   
+</canvas>
               <h3>Calculate Calorie Budget</h3>
               <h4><span id="calorie-budget"></span> calories</h4>
         </header>
@@ -199,6 +219,48 @@
 
 {{/if}}
     <br><button id="wipe-button" style="display:inline-flex">Whoops, wipe current data</button>
+    <div id="water-modal" class="modal">
+      <div class="modal-content">
+        <span id="wclose">&times;</span>
+        <h2>How much water did you drink?</h2>
+        <label for="water-ounces">Ounces of Water:</label>
+        <input type="text" id="water-ounces" name="water-ounces">
+        <button id="submit-water">Submit Water</button>
+      </div>
+    </div>
+
+    <div id="exercise-modal" class="modal">
+      <div class="modal-content">
+        <span id="eclose">&times;</span>
+        <h2>did you work out?</h2>
+        <label for="exercise-calories">Input Total Calories burned:</label>
+        <input type="text" id="exercise-calories" name="exercise-calories">
+        <button id="submit-calorie-button-exercise">Submit Calories</button>
+      </div>
+    </div>
+
+    <div id="budget-modal" class="modal">
+      <div class="modal-content">
+        <span id="budget-close">&times;</span>
+        <h2>Basal Metabolic Rate Calculator</h2>
+        <label for="height-inches">What's your height in inches?</label> <br>
+        <input type="text" id="height-inches" name="height-inches"> <br>
+        <label for="weight-pounds">What's your weight in pounds?</label> <br>
+        <input type="text" id="weight-pounds" name="weight-pounds"> <br>
+        <label for="age-years">What's your age in years?</label> <br>
+        <input type="text" id="age-years" name="age-years"> <br>
+        <br>
+        <button id="calc-cal-budget">Calculate</button>
+      </div>
+    </div>
+
+    <div id="save-button-div">
+      <button id="save-button">Save Daily Totals</button>
+    </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/js/acquisitions.js"></script>
+        
+
 
     <script src="/js/script.js"></script>
     
