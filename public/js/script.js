@@ -18,10 +18,11 @@ const wipeButton = document.getElementById('wipe-button');
 
 // Button to wipe local storage
 
-// wipeButton.onclick = function() {
-//   console.log("Wiping current local values...")
-//   window.localStorage.clear();
-// };
+wipeButton.onclick = function() {
+  console.log("Wiping current local values...")
+  localStorage.clear();
+  location.reload();
+};
 
 
 
@@ -39,6 +40,9 @@ let tcc = localStorage.getItem('calories');
 calories.innerHTML = tcc;
 
 let totalWaterOunces = localStorage.getItem('water');
+if (totalWaterOunces == NaN) {
+  totalWaterOunces = 0;
+}
 water.innerHTML = totalWaterOunces;
 
 let totalExercise = localStorage.getItem('exercise');
@@ -145,6 +149,7 @@ subSnackCalButton.addEventListener('click', function(event) {
   calSub.innerHTML = "";
   console.log(count);
   let currentCal = Number(localStorage.getItem('calories'));
+  console.log(currentCal);
   count += currentCal;
   console.log(`This accrued calories: ${count}`);
   localStorage.setItem('calories', count);
@@ -155,9 +160,14 @@ subSnackCalButton.addEventListener('click', function(event) {
 subWaterButton.addEventListener('click', function(event) {
   event.preventDefault();
   let h20sub = Number(document.getElementById('water-ounces').value);
+  console.log(`Water submitted: ${h20sub}`);
   let ounces = h20sub;
-  console.log(ounces);
+  console.log(`Ounces of water: ${ounces}`);
   let currentH20 = Number(localStorage.getItem('water'));
+  if (currentH20 == NaN) {
+    currentH20 = 0;
+  }
+  console.log(`currentH20 ${currentH20}`)
   ounces += currentH20;
   console.log(`You have accrued this amount of water: ${ounces}`);
   localStorage.setItem('water', ounces);
