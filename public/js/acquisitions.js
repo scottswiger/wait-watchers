@@ -26,6 +26,7 @@
 
 
 //water Chart and function
+
 const waterChart = document.getElementById('myChart2');         
 new Chart(waterChart, {
   type: 'bar',
@@ -34,7 +35,8 @@ new Chart(waterChart, {
     datasets: [{
       label: 'Water Intake',
       data: [window.localStorage.getItem('water')],
-      borderWidth: 1
+      borderWidth: 1,
+      backgroundColor: "rgba(241, 162, 8, 1)",
 
     }]
   },
@@ -48,6 +50,7 @@ new Chart(waterChart, {
 });
 
 // exercise Chart and function
+
 const exChart = document.getElementById('myChart3'); 
 new Chart(exChart, {
   type: 'bar',
@@ -56,7 +59,8 @@ new Chart(exChart, {
     datasets: [{
       label: 'Calories Burned',
       data: [window.localStorage.getItem('exercise')],
-      borderWidth: 1
+      borderWidth: 1,
+      backgroundColor: "rgba(241, 162, 8, 1)", 
     }]
   },
   options: {
@@ -68,22 +72,25 @@ new Chart(exChart, {
   }
 });
 
-const lbsChart = document.getElementById('myChart4'); 
-new Chart(lbsChart, {
-  type: 'line',
-  data: {
-    labels: ['Today','Tomorrow','Nextday','Days'],
-    datasets: [{
-      label: 'Lbs',
-      data: [200,167,199,88],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
+
+//weight Chart and functon
+
+// const lbsChart = document.getElementById('myChart4'); 
+// new Chart(lbsChart, {
+//   type: 'line',
+//   data: {
+//     labels: ['Today','Tomorrow','Nextday','Days'],
+//     datasets: [{
+//       label: 'Lbs',
+//       data: [200,167,199,88],
+//       borderWidth: 1
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true
+//       }
+//     }
+//   }
+// });
