@@ -252,7 +252,9 @@ h1, h2, h3, h4, h5, h6, button {
 #dclose, 
 #sclose,
 #wclose,
-#eclose {
+#eclose,
+#weightclose,
+#budget-close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -264,7 +266,9 @@ h1, h2, h3, h4, h5, h6, button {
 #dclose:hover, #dclose:focus,
 #sclose:hover, #sclose:focus,
 #wclose:hover, #wclose:focus,
-#eclose:hover, #eclose:focus {
+#eclose:hover, #eclose:focus,
+#weightclose:hover, #weightclose:focus,
+#budget-close:hover, #budget-close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
